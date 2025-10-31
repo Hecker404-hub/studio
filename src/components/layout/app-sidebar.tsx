@@ -15,6 +15,7 @@ import {
   FileText,
   Settings,
   AlertTriangle,
+  Globe,
 } from "lucide-react";
 import { UserNav } from "../user-nav";
 import { Separator } from "../ui/separator";
@@ -63,7 +64,13 @@ export function AppSidebar() {
               Alerts
             </SidebarMenuButton>
           </SidebarMenuItem>
-          <Separator className="my-2" />
+           <Separator className="my-2" />
+           <SidebarMenuItem>
+            <SidebarMenuButton tooltip="Threat Intelligence Map">
+              <Globe />
+              Threat Map
+            </SidebarMenuButton>
+          </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton tooltip="Anomaly Detection">
               <GitCompareArrows />

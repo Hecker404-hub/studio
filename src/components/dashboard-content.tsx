@@ -10,15 +10,20 @@ import { AnomalyDetectionTool } from "@/components/tools/anomaly-detection";
 import { AdaptiveResponseTool } from "@/components/tools/adaptive-response";
 import { LogAnalysisTool } from "@/components/tools/log-analysis";
 import { OverviewTab } from "./dashboard/overview-tab";
-import { LayoutDashboard, GitCompareArrows, Bot, FileText } from "lucide-react";
+import { LayoutDashboard, GitCompareArrows, Bot, FileText, Globe } from "lucide-react";
+import { ThreatMapTab } from "./dashboard/threat-map-tab";
 
 export function DashboardContent() {
   return (
     <Tabs defaultValue="overview" className="w-full">
-      <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-4 h-auto">
+      <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-5 h-auto">
         <TabsTrigger value="overview">
           <LayoutDashboard className="mr-2" />
           Overview
+        </TabsTrigger>
+        <TabsTrigger value="threat-map">
+          <Globe className="mr-2" />
+          Threat Map
         </TabsTrigger>
         <TabsTrigger value="anomaly-detection">
           <GitCompareArrows className="mr-2" />
@@ -35,6 +40,9 @@ export function DashboardContent() {
       </TabsList>
       <TabsContent value="overview">
         <OverviewTab />
+      </TabsContent>
+      <TabsContent value="threat-map">
+        <ThreatMapTab />
       </TabsContent>
       <TabsContent value="anomaly-detection">
         <AnomalyDetectionTool />
