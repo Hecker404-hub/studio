@@ -64,3 +64,67 @@ You can start editing the main page by modifying `src/app/page.tsx`.
 -   `npm run start`: Starts a production server.
 -   `npm run lint`: Runs the linter to check for code quality issues.
 -   `npm run genkit:dev`: Starts the Genkit development server for testing AI flows.
+
+flowchart TD
+
+    %% === Data Sources ===
+    subgraph A["🛰️ Data Sources"]
+        NET["Network Traffic Logs"]
+        SYS["System Logs"]
+        DB["Database Queries"]
+    end
+
+    %% === Backend AI Layer ===
+    subgraph B["🤖 AI & Backend Layer"]
+        direction TB
+        ML["AI-Powered Anomaly Detection (Genkit + ML Models)"]
+        NLP["Natural Language Log Analysis (NLP Engine)"]
+        ADAPT["Adaptive AI Defense (Self-Learning Module)"]
+        API["Next.js API Routes / Firebase Functions"]
+        
+        NET --> ML
+        SYS --> NLP
+        DB --> ML
+        ML --> ADAPT
+        NLP --> API
+        ADAPT --> API
+    end
+
+    %% === Frontend Layer ===
+    subgraph C["💻 Frontend Layer (Next.js + TypeScript)"]
+        direction TB
+        DASH["Real-time Threat Dashboard"]
+        CHARTS["Interactive Charts (Recharts)"]
+        UI["Responsive UI (ShadCN + Tailwind CSS)"]
+        HOOKS["Custom Hooks & Utilities"]
+        THEMES["Light/Dark Mode"]
+        DASH --> CHARTS
+        DASH --> UI
+        DASH --> HOOKS
+        UI --> THEMES
+    end
+
+    %% === Communication ===
+    API --> DASH
+    DASH <--> USER["Security Analyst / Admin"]
+
+    %% === Project Structure ===
+    subgraph D["📁 Project Structure (src/)"]
+        APP["app/ - Pages & Layout"]
+        COMPONENTS["components/ - Dashboard, Layout, Tools, UI"]
+        AI["ai/flows - Genkit AI Flows"]
+        LIB["lib/ - Utilities & Functions"]
+        HOOKS_DIR["hooks/ - Custom React Hooks"]
+    end
+
+    %% === Relations between code structure and app layers ===
+    D --> C
+    D --> B
+
+    %% === Deployment ===
+    subgraph E["🚀 Deployment"]
+        VERCEL["Vercel / Firebase Hosting"]
+        BUILD["npm run build & start"]
+    end
+    C --> E
+    B --> E
