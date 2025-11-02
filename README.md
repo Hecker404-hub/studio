@@ -1,4 +1,4 @@
-# ProCognito: AI-Powered Cybersecurity Dashboard
+# ProCognito: AI-Powered Cybersecurity WebApp Prototype
 
 ProCognito is an intelligent system designed to proactively predict and respond to cyber threats. It leverages machine learning and adaptive AI models to identify new or unknown attack patterns, providing a comprehensive dashboard for security professionals to monitor, analyze, and act on potential threats.
 
